@@ -29,10 +29,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post(
-  "/product/create",
+  '/product/create',
   requireSignin,
   adminMiddleware,
-  uploadS3.array("productPicture"),
+  uploadS3.array('productPicture'),
   createProduct
 );
 router.get("/products/:slug", getProductsBySlug);
